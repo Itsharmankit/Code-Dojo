@@ -24,6 +24,7 @@ function ProtectedRoute({ children }) {
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
   const user = localStorage.getItem('codedojo_user');
+  const routerBase = import.meta.env.BASE_URL;
   
   if (isLoading) return <div className="min-h-screen bg-[#0d1117] flex items-center justify-center text-cyan-400 font-mono">Loading App...</div>;
 
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <ProgressProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBase}>
         <Navbar />
         <Routes>
         {/* Public Routes - Redirect to Home if already logged in */}

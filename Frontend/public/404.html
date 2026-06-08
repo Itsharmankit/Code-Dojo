@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Dojo</title>
+    <script>
+      const base = '/Code-Dojo/';
+      const redirectTo = base + (location.pathname.replace(/^\/Code-Dojo\//, '') || '') + location.search + location.hash;
+      sessionStorage.setItem('gh-pages-redirect', redirectTo);
+      location.replace(base);
+    </script>
+  </head>
+  <body></body>
+</html>
